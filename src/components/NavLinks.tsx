@@ -13,7 +13,6 @@ export default function NavLinks() {
     { href: "/community", label: "Community" },
     { href: "/partners", label: "Partners" },
     { href: "/contact", label: "Contact" },
-    { href: "/join", label: "Join" },
   ];
 
   return (
