@@ -31,14 +31,13 @@ const floatingVariants = {
 };
 
 const partners = [
-  { name: "GDGoC BOUESTI", logo: "/images/logo.png" },
-  { name: "Enactus BOUESTI", logo: "/images/logo.png" },
-  { name: "Hult Prize BOUESTI", logo: "/images/logo.png" },
-  { name: "Cowrywise BOUESTI", logo: "/images/logo.png" },
-  { name: "Amazing Tech Community", logo: "/images/logo.png" },
-  { name: "TechHub EKSU", logo: "/images/logo.png" },
-  { name: "GDG Ado-Ekiti", logo: "/images/logo.png" },
-  { name: "She Code Africa Ekiti", logo: "/images/logo.png" },
+  { name: "GDGoC BOUESTI", logo: "/images/partners/GDGoC BOUESTI.png" },
+  { name: "TechHub EKSU", logo: "/images/partners/techhub EKSU.png" },
+  { name: "ATC Africa", logo: "/images/partners/ATC Africa BOUESTI.png" },
+  { name: "ARVANI", logo: "/images/partners/ARVANI-2.jpeg", emphasis: true },
+  { name: "OSCA Ado-Ekiti", logo: "/images/partners/Osca Ado-Ekiti.png" },
+  { name: "The Mikaelson Community", logo: "/images/partners/The Mikaelson Community.png" },
+  { name: "Enactus BOUESTI", logo: "/images/partners/Enactus Logo 1024x444.png" },
 ];
 
 export default function PartnersPage() {
@@ -74,8 +73,8 @@ export default function PartnersPage() {
           </motion.p>
           <motion.div variants={heroFade} initial="hidden" animate="visible" custom={3}>
             <Link
-              href="/register"
-              className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-base font-semibold text-white shadow-[0_12px_24px_rgba(212,152,47,0.35)] transition hover:-translate-y-0.5 bg-[#D4982F] hover:bg-[#C28421] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C28421]"
+              href="/join"
+              className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-base font-semibold text-black shadow-[0_12px_24px_rgba(212,152,47,0.35)] transition hover:-translate-y-0.5 bg-[#F9E4B5] hover:bg-[#F3D48D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C28421]"
             >
               Join Our Network
             </Link>
@@ -89,23 +88,23 @@ export default function PartnersPage() {
           <p className="text-gray-600">Floating logos celebrate the communities that power student success.</p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {partners.map((partner, index) => (
             <motion.div
-              key={partner.name}
-              className="relative overflow-hidden rounded-3xl bg-white shadow-xl border border-gray-100 p-8 flex flex-col items-center gap-4"
+                key={partner.name}
+                className={`relative overflow-hidden rounded-3xl bg-white shadow-xl border border-gray-100 flex flex-col items-center gap-5 p-10 ${partner.emphasis ? "sm:p-12" : ""}`}
               variants={floatingVariants}
               initial="initial"
               animate="animate"
               whileHover={{ scale: 1.03, rotate: 1 }}
             >
-              <motion.div
-                className="relative h-24 w-24 rounded-2xl bg-slate-50 flex items-center justify-center shadow-inner"
-                whileHover={{ scale: 1.08 }}
-                transition={{ type: "spring", stiffness: 200, damping: 14 }}
-              >
-                <Image src={partner.logo} alt={`${partner.name} logo`} fill className="object-contain p-4" />
-              </motion.div>
+                <motion.div
+                  className={`relative rounded-2xl bg-white border border-[color:var(--brand-primary)]/20 flex items-center justify-center shadow-md ${partner.emphasis ? "h-36 w-36" : "h-32 w-32"}`}
+                  whileHover={{ scale: 1.08 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 14 }}
+                >
+                  <Image src={partner.logo} alt={`${partner.name} logo`} fill className={`object-contain ${partner.emphasis ? "p-4" : "p-6"}`} />
+                </motion.div>
               <h3 className="text-lg font-semibold text-gray-900 text-center">{partner.name}</h3>
             </motion.div>
           ))}
@@ -140,8 +139,8 @@ export default function PartnersPage() {
             Collaborate with TechHub BOUESTI to mentor, sponsor programs, or co-create opportunities for students.
           </p>
           <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-base font-semibold text-[color:var(--brand-primary)] bg-white shadow-lg transition hover:bg-slate-100"
+            href="/join"
+            className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-base font-semibold text-black shadow-[0_12px_24px_rgba(212,152,47,0.35)] transition hover:-translate-y-0.5 bg-[#F9E4B5] hover:bg-[#F3D48D]"
           >
             Partner with Us
           </Link>

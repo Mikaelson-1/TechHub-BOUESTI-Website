@@ -144,8 +144,8 @@ export default function ContactPage() {
             Whether you’re a student, mentor, or partner, we’d love to connect and collaborate.
           </p>
           <Link
-            href="/partners"
-            className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-base font-semibold text-[color:var(--brand-primary)] bg-white shadow-lg transition hover:bg-slate-100"
+            href="/join"
+            className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-base font-semibold text-black shadow-[0_12px_24px_rgba(212,152,47,0.35)] transition hover:-translate-y-0.5 bg-[#F9E4B5] hover:bg-[#F3D48D]"
           >
             Explore Partnerships
           </Link>

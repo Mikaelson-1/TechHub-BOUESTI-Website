@@ -48,7 +48,6 @@ const featuredCommunities = [
 const ekitiCommunities = [
   "GDG Ado-Ekiti",
   "AWS User Group Ado-Ekiti",
-  "She Code Africa Ekiti",
   "Product Designers EKSU",
   "Figma Africa Ekiti",
 ];
@@ -59,6 +58,24 @@ const offerings = [
   { icon: "🧭", title: "Mentorship & Career Guidance", text: "Navigate your journey with personalized support from professionals." },
   { icon: "🛠", title: "Collaborative Projects", text: "Build projects with teammates, improve your portfolio, and ship ideas." },
   { icon: "🤝", title: "Networking Opportunities", text: "Connect with peers, communities, and companies across Nigeria." },
+];
+
+const partnerLogos = [
+  { name: "GDGoC BOUESTI", logo: "/images/partners/GDGoC BOUESTI.png" },
+  { name: "TechHub EKSU", logo: "/images/partners/techhub EKSU.png" },
+  { name: "ATC Africa", logo: "/images/partners/ATC Africa BOUESTI.png" },
+  { name: "OSCA Ado-Ekiti", logo: "/images/partners/Osca Ado-Ekiti.png" },
+  { name: "The Mikaelson Community", logo: "/images/partners/The Mikaelson Community.png" },
+  { name: "Enactus BOUESTI", logo: "/images/partners/Enactus Logo 1024x444.png" },
+];
+
+const galleryCommunities = [
+  { name: "GDGoC BOUESTI", logo: "/images/partners/GDGoC BOUESTI.png" },
+  { name: "TechHub EKSU", logo: "/images/partners/techhub EKSU.png" },
+  { name: "ATC Africa", logo: "/images/partners/ATC Africa BOUESTI.png" },
+  { name: "OSCA Ado-Ekiti", logo: "/images/partners/Osca Ado-Ekiti.png" },
+  { name: "The Mikaelson Community", logo: "/images/partners/The Mikaelson Community.png" },
+  { name: "Enactus BOUESTI", logo: "/images/partners/Enactus Logo 1024x444.png" },
 ];
 
 export default function CommunityPage() {
@@ -100,8 +117,8 @@ export default function CommunityPage() {
             custom={3}
           >
             <Link
-              href="/register"
-              className="inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-primary)] px-6 py-3 text-white font-semibold shadow-lg transition hover:bg-[color:var(--brand-secondary)]"
+              href="/join"
+              className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-base font-semibold text-black shadow-[0_12px_24px_rgba(212,152,47,0.35)] transition hover:-translate-y-0.5 bg-[#F9E4B5] hover:bg-[#F3D48D]"
             >
               Join the Community
             </Link>
@@ -184,7 +201,7 @@ export default function CommunityPage() {
                 {name}
               </motion.div>
             ))}
-          </div>
+              </div>
         </motion.div>
       </section>
 
@@ -234,9 +251,9 @@ export default function CommunityPage() {
         </motion.div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {[...featuredCommunities.map((c) => c.name), ...ekitiCommunities].map((name, index) => (
+          {galleryCommunities.map((community, index) => (
             <motion.div
-              key={name}
+              key={community.name}
               className="rounded-3xl bg-white shadow-lg border border-gray-100 p-6 flex flex-col items-start"
               variants={fadeUp}
               initial="hidden"
@@ -247,8 +264,9 @@ export default function CommunityPage() {
               <div className="rounded-xl bg-[color:var(--brand-primary)]/10 px-3 py-1 text-xs font-semibold text-[color:var(--brand-primary)] uppercase tracking-wide">
                 Community
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-gray-900">{name}</h3>
-              <Link href="/register" className="mt-4 text-sm font-semibold text-[color:var(--brand-primary)] hover:text-[color:var(--brand-secondary)]">
+              <img src={community.logo} alt={`${community.name} logo`} className="mt-4 h-16 object-contain" />
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">{community.name}</h3>
+              <Link href="/join" className="mt-4 text-sm font-semibold text-[color:var(--brand-primary)] hover:text-[color:var(--brand-secondary)]">
                 Learn More →
               </Link>
             </motion.div>
@@ -256,9 +274,42 @@ export default function CommunityPage() {
         </div>
       </section>
 
+      <section className="bg-slate-50">
+        <div className="container mx-auto max-w-6xl px-6 py-16 sm:py-20 space-y-12">
+          <motion.div
+            className="text-center space-y-4"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900">Our Partners</h2>
+            <p className="text-gray-600">We collaborate with industry and community partners to broaden student opportunities.</p>
+          </motion.div>
+
+          <div className="rounded-3xl bg-white border border-gray-100 p-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+              {partnerLogos.map((partner, index) => (
+                <motion.div
+                  key={partner.name}
+                  className="h-24 rounded-3xl bg-white border border-[color:var(--brand-primary)]/20 shadow flex items-center justify-center"
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  custom={index}
+                >
+                  <img src={partner.logo} alt={`${partner.name} logo`} className="max-h-20 max-w-[80%] object-contain" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="container mx-auto max-w-5xl px-6 pb-20">
         <motion.div
-          className="rounded-3xl bg-gradient-to-br from-[color:var(--brand-primary)] to-[color:var(--brand-secondary)] text-white shadow-xl p-10 sm:p-14 text-center spacey-4"
+          className="rounded-3xl bg-gradient-to-br from-[color:var(--brand-primary)] to-[color:var(--brand-secondary)] text-white shadow-xl p-10 sm:p-14 text-center space-y-4"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -270,8 +321,8 @@ export default function CommunityPage() {
           </p>
           <div className="mt-6">
             <Link
-              href="/register"
-              className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-[color:var(--brand-primary)] font-semibold shadow-lg transition hover:bg-slate-100"
+              href="/join"
+              className="inline-flex items-center justify-center rounded-2xl px-8 py-3 text-base font-semibold text-black shadow-[0_12px_24px_rgba(212,152,47,0.35)] transition hover:-translate-y-0.5 bg-[#F9E4B5] hover:bg-[#F3D48D]"
             >
               Join the Community
             </Link>

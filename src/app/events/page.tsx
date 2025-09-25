@@ -17,34 +17,75 @@ const fadeUp = {
   }),
 };
 
-const agenda = [
-  { time: "9:00 AM", title: "Opening Remarks" },
-  { time: "9:30 AM", title: "Keynote Address" },
-  { time: "10:00 AM – 2:00 PM", title: "Speaker Sessions (25 mins each)" },
-  { time: "2:00 PM", title: "Panel Session (Academia × Tech)" },
-  { time: "3:30 PM", title: "Community Partners Pitch" },
-  { time: "4:00 PM", title: "Closing & Networking" },
+const speakers = [
+  { name: "Femi Taiwo", role: "CTO & Co-founder, INITS Limited", image: "/images/speakers/Femi Taiwo.JPG" },
+  { name: "Goodness Adebayo", role: "Senior Product Designer, Ahavaplan", image: "/images/speakers/Goodness Adebayo.png" },
+  { name: "Olamide Ilori", role: "Frontend Engineer Lead, Prospa (YC W21)", image: "/images/speakers/Olamide Ilori.png" },
+  { name: "Imam Bashir Abdulwahab", role: "Security Engineer & Community Enabler", image: "/images/speakers/Imam Bashir IDs (1).JPG" },
+  { name: "Samuel Afolabi", role: "Principal Cybersecurity Consultant", image: "/images/speakers/Samuel Afolabi.jpg" },
+  { name: "Shalom Bamigboye", role: "CEO & Co-Founder, Entobo Technologies", image: "/images/speakers/Shalom Bamigboye.jpeg" },
+  { name: "Gospel Jonathan", role: "Software Engineer, PurpleBee", image: "/images/speakers/Gospel Jonathan.jpg" },
+  { name: "David Oluwabusayo", role: "GDG Ado-Ekiti Lead", image: "/images/speakers/David Oluwabusayo.jpeg.jpg" },
+  { name: "Favour Adeshina", role: "Community Manager, 3MTT Ekiti State", image: "/images/speakers/Favour Adeshina.jpg" },
+  { name: "Tenibiaje Mobolaji", role: "Senior DevOps Engineer", image: "/images/speakers/Tenibiaje Mobolaji.PNG" },
 ];
 
-const speakers = [
-  { name: "Goodness Adebayo", role: "Product Designer", image: "/images/Goodness Adebayo.png" },
-  { name: "Olamide Ilorin", role: "Frontend Engineer", image: "/images/team-placeholder.svg" },
-  { name: "Imam Bashir Abdulwahab", role: "Community Enabler", image: "/images/Imam Bashir IDs (1).JPG" },
-  { name: "Samuel Afolabi", role: "Principal Cybersecurity Consultant", image: "/images/Samuel Afolabi.jpg" },
-  { name: "Shalom Gbamigboye", role: "CEO & Co-Founder, Entobo Technologies", image: "/images/Shalom Bamigboye.jpeg" },
-  { name: "GDG Ado-Ekiti Lead", role: "Community Leader", image: "/images/team-placeholder.svg" },
-  { name: "David Oluwabusayo", role: "Software Engineer", image: "/images/David Oluwabusayo.jpeg.jpg" },
-  { name: "Femi Taiwo", role: "Tech Ecosystem Advocate", image: "/images/Femi Taiwo.JPG" },
-  { name: "Gospel Jonathan", role: "Product Manager", image: "/images/Gospel Jonathan.jpg" },
+const agendaSections = [
+  {
+    title: "Morning Session",
+    items: [
+      { time: "09:00 – 09:30 AM", detail: "Arrival & Registration" },
+      { time: "09:30 – 09:45 AM", detail: "Opening Remarks", sub: "UCRC Director · Dean of Student Affairs" },
+      { time: "09:45 – 10:00 AM", detail: "Introduction to TechHub BOUESTI" },
+      { time: "10:00 – 10:20 AM", detail: "Samuel Afolabi", sub: "What I Will Tell My Younger Self in Cybersecurity" },
+      { time: "10:25 – 10:45 AM", detail: "Jonathan Gospel" },
+      { time: "10:50 – 11:10 AM", detail: "Imam Bashir Abdulwahab" },
+      { time: "11:15 – 11:35 AM", detail: "Shalom Bamigboye" },
+      { time: "11:40 – 12:00 PM", detail: "Jerry" },
+    ],
+  },
+  {
+    title: "Midday",
+    items: [
+      { time: "12:00 – 12:15 PM", detail: "Break / Networking" },
+      { time: "12:15 – 12:35 PM", detail: "David Oluwabusayo" },
+      { time: "12:40 – 01:00 PM", detail: "Femi Taiwo" },
+      { time: "01:00 – 01:45 PM", detail: "Tenibiaje Mobolaji" },
+    ],
+  },
+  {
+    title: "Afternoon Session",
+    items: [
+      { time: "01:45 – 02:05 PM", detail: "Favour Adeshina" },
+      { time: "02:10 – 02:30 PM", detail: "Goodness Adebayo" },
+      { time: "02:30 – 02:50 PM", detail: "Olamide Olori" },
+    ],
+  },
+  {
+    title: "Panel Discussion: Bridging Academia & Technology",
+    items: [
+      { time: "02:30 – 03:15 PM", detail: "Panel Session", sub: "Moderator · School Representative (Academia) · 2–3 Industry Speakers" },
+      { time: "03:15 – 03:55 PM", detail: "Community Partners Pitch", sub: "10+ Communities · 3–4 minutes each" },
+      { time: "03:55 – 04:00 PM", detail: "Vote of Thanks & Closing Remarks" },
+    ],
+  },
 ];
 
 const organizers = [
-  { name: "TechHub BOUESTI Team", description: "Student leaders, mentors, and facilitators powering the hub." },
-  { name: "Campus Director", description: "Coordinating logistics and student experience." },
-  { name: "Student Volunteers", description: "Ensuring seamless registration, hospitality, and tech support." },
+  { name: "Michael Olukayode", role: "Chief Organizer", image: "/images/organizers/Michael Olukayode.jpeg" },
+  { name: "TechHub Operations Team", role: "Campus coordination & student experience", image: null },
+  { name: "Student Volunteers", role: "Registration · Hospitality · Tech support", image: null },
 ];
 
-const partnerLogos = [1, 2, 3, 4, 5, 6, 7, 8];
+const partnerLogos = [
+  { name: "GDGoC BOUESTI", logo: "/images/partners/GDGoC BOUESTI.png" },
+  { name: "TechHub EKSU", logo: "/images/partners/techhub EKSU.png" },
+  { name: "ATC Africa", logo: "/images/partners/ATC Africa BOUESTI.png" },
+  { name: "ARVANI", logo: "/images/partners/ARVANI-2.jpeg", emphasis: true },
+  { name: "OSCA Ado-Ekiti", logo: "/images/partners/Osca Ado-Ekiti.png" },
+  { name: "The Mikaelson Community", logo: "/images/partners/The Mikaelson Community.png" },
+  { name: "Enactus BOUESTI", logo: "/images/partners/Enactus Logo 1024x444.png" },
+];
 
 const valueProps = [
   { icon: "🎤", title: "Learn from industry experts" },
@@ -86,7 +127,7 @@ export default function EventsPage() {
             href="https://gdg.community.dev/events/details/google-gdg-on-campus-bamidele-olumilua-university-of-education-science-and-technology-ikere-ekiti-nigeria-presents-techhub-bouesti-launch-event/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-primary)] px-6 py-3 text-white font-semibold shadow-lg transition hover:bg-[color:var(--brand-secondary)]"
+            className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold text-black bg-[#F9E4B5] hover:bg-[#F3D48D] shadow-lg transition hover:-translate-y-0.5"
           >
             Register Now
           </Link>
@@ -104,34 +145,6 @@ export default function EventsPage() {
             The TechHub BOUESTI Launch is our kickoff experience for empowering students to dream, build, and lead through technology. Expect a full day with 9 inspiring speakers, 10+ partners, panel conversations, community showcases, and hands-on opportunities to join the hub.
           </p>
         </motion.div>
-      </section>
-
-      <section className="bg-white">
-        <div className="container mx-auto max-w-5xl px-6 py-16 sm:py-20">
-          <motion.div
-            className="space-y-6"
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <h2 className="text-3xl font-semibold text-gray-900">Agenda</h2>
-            <div className="relative border-l-2 border-[color:var(--brand-primary)]/40 pl-6 space-y-6">
-              {agenda.map((item, index) => (
-                <motion.div
-                  key={item.time}
-                  className="relative"
-                  variants={fadeUp}
-                  custom={index}
-                >
-                  <span className="absolute -left-7 top-1.5 h-3 w-3 rounded-full bg-[color:var(--brand-primary)]" />
-                  <p className="text-sm font-medium text-[color:var(--brand-primary)]">{item.time}</p>
-                  <p className="text-lg text-gray-800">{item.title}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
       </section>
 
       <section className="container mx-auto max-w-6xl px-6 py-16 sm:py-20">
@@ -173,42 +186,118 @@ export default function EventsPage() {
         </div>
       </section>
 
-      <section className="bg-slate-50">
-        <div className="container mx-auto max-w-6xl px-6 py-16 sm:py-20 space-y-12">
+      <section className="bg-white">
+        <div className="container mx-auto max-w-5xl px-6 py-16 sm:py-20">
           <motion.div
-            className="grid gap-8 lg:grid-cols-[2fr_3fr]"
+            className="space-y-8"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <div className="rounded-3xl bg-white border border-gray-100 shadow-lg p-8">
-              <h2 className="text-2xl font-semibold text-gray-900">Organizers</h2>
-              <p className="mt-3 text-sm text-gray-600">Powered by TechHub BOUESTI leadership, faculty champions, and student volunteers.</p>
-              <ul className="mt-6 space-y-4">
-                {organizers.map((org, index) => (
-                  <motion.li key={org.name} className="space-y-1" variants={fadeUp} custom={index + 1}>
-                    <h3 className="text-lg font-semibold text-gray-900">{org.name}</h3>
-                    <p className="text-sm text-gray-600">{org.description}</p>
-                  </motion.li>
-                ))}
-              </ul>
+            <div className="text-center space-y-2">
+              <h2 className="text-3xl font-semibold text-gray-900">TechHub BOUESTI Launch – Event Agenda</h2>
+              <p className="text-sm text-gray-600">📍 TechHub BOUESTI · 📅 Friday, 26 September 2025 · 🕘 9:00 AM – 4:00 PM</p>
             </div>
-            <div className="rounded-3xl bg-white border border-gray-100 shadow-lg p-8">
-              <h2 className="text-2xl font-semibold text-gray-900">Partners</h2>
-              <p className="mt-3 text-sm text-gray-600">We’re teaming up with communities and companies dedicated to student success.</p>
-              <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                {partnerLogos.map((logo) => (
-                  <motion.div
-                    key={logo}
-                    className="h-20 rounded-2xl bg-slate-100 flex items-center justify-center"
-                    variants={fadeUp}
-                    custom={logo}
+            <div className="grid gap-6 md:grid-cols-2">
+              {agendaSections.map((section, sectionIndex) => (
+                <motion.div
+                  key={section.title}
+                  className="relative rounded-3xl border border-[color:var(--brand-primary)]/20 bg-white shadow-lg p-6 space-y-4 hover:-translate-y-1 transition"
+                  variants={fadeUp}
+                  custom={sectionIndex}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <div className="absolute top-4 right-4 text-xs font-semibold text-[color:var(--brand-primary)]/70 uppercase tracking-wide">{sectionIndex + 1}</div>
+                  <h3 className="text-lg font-semibold text-[color:var(--brand-primary)]">{section.title}</h3>
+                  <div className="space-y-3">
+                    {section.items.map((item) => (
+                      <div key={`${item.time}-${item.detail}`} className="rounded-2xl border border-[color:var(--brand-primary)]/15 bg-[color:var(--brand-primary)]/5 px-4 py-3">
+                        <p className="text-sm font-semibold text-[color:var(--brand-primary)]">{item.time}</p>
+                        <p className="text-base text-gray-900">{item.detail}</p>
+                        {item.sub ? <p className="text-sm text-gray-600 mt-1">{item.sub}</p> : null}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50">
+        <div className="container mx-auto max-w-6xl px-6 py-16 sm:py-20 space-y-12">
+          <motion.div
+            className="rounded-3xl bg-white border border-gray-100 shadow-lg p-8"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h2 className="text-2xl font-semibold text-gray-900">Organizers</h2>
+            <p className="mt-3 text-sm text-gray-600">Powered by TechHub BOUESTI leadership, faculty champions, and student volunteers.</p>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {organizers.map((org, index) => (
+                <motion.div
+                  key={org.name}
+                  className="rounded-3xl border border-[color:var(--brand-primary)]/20 bg-white shadow-sm p-5 text-center space-y-4"
+                  variants={fadeUp}
+                  custom={index + 1}
+                >
+                  <div className="relative mx-auto h-20 w-20">
+                    {org.image ? (
+                      <img
+                        src={org.image}
+                        alt={`${org.name} portrait`}
+                        className="h-full w-full rounded-full object-cover shadow"
+                      />
+                    ) : (
+                      <div className="h-full w-full rounded-full bg-[color:var(--brand-primary)]/10 border border-[color:var(--brand-primary)]/25 flex items-center justify-center text-sm font-semibold text-[color:var(--brand-primary)]">
+                        Photo Coming Soon
+                      </div>
+                    )}
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-semibold text-gray-900">{org.name}</h3>
+                    <p className="text-sm text-gray-600">{org.role}</p>
+                  </div>
+                  <Link
+                    href="/join"
+                    className="inline-flex items-center justify-center rounded-full border border-[color:var(--brand-primary)] px-4 py-2 text-xs font-semibold text-[color:var(--brand-primary)] hover:bg-[color:var(--brand-primary)]/10 transition"
                   >
-                    <span className="text-sm font-semibold text-gray-400">Logo</span>
-                  </motion.div>
-                ))}
-              </div>
+                    View Profile
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="rounded-3xl bg-white border border-gray-100 shadow-lg p-8"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <h2 className="text-2xl font-semibold text-gray-900">Partners</h2>
+            <p className="mt-3 text-sm text-gray-600">We’re teaming up with communities and companies dedicated to student success.</p>
+            <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+              {partnerLogos.map((partner, index) => (
+                <motion.div
+                  key={partner.name}
+                  className={`${partner.emphasis ? "h-28 sm:h-32" : "h-24"} rounded-3xl bg-white border border-[color:var(--brand-primary)]/20 shadow-lg flex items-center justify-center`}
+                  variants={fadeUp}
+                  custom={index}
+                  whileHover={{ scale: 1.04 }}
+                >
+                  <img
+                    src={partner.logo}
+                    alt={`${partner.name} logo`}
+                    className={`${partner.emphasis ? "max-h-24 max-w-[88%]" : "max-h-20 max-w-[80%]"} object-contain`}
+                  />
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>

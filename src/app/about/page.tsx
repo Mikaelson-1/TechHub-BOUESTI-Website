@@ -88,7 +88,15 @@ const team = [
   },
 ];
 
-const partners = [1, 2, 3, 4, 5, 6];
+const partners = [
+  { name: "GDGoC BOUESTI", logo: "/images/partners/GDGoC BOUESTI.png" },
+  { name: "TechHub EKSU", logo: "/images/partners/techhub EKSU.png" },
+  { name: "ATC Africa", logo: "/images/partners/ATC Africa BOUESTI.png" },
+  { name: "ARVANI", logo: "/images/partners/ARVANI-2.jpeg" },
+  { name: "OSCA Ado-Ekiti", logo: "/images/partners/Osca Ado-Ekiti.png" },
+  { name: "The Mikaelson Community", logo: "/images/partners/The Mikaelson Community.png" },
+  { name: "Enactus BOUESTI", logo: "/images/partners/Enactus Logo 1024x444.png" },
+];
 
 export default function AboutPage() {
   return (
@@ -111,14 +119,6 @@ export default function AboutPage() {
             <p className="mx-auto max-w-3xl text-lg text-gray-600">
               TechHub BOUESTI empowers students with resources, mentorship, and opportunities to thrive in tech.
             </p>
-            <div className="pt-2">
-              <Link
-                href="/register"
-                className="inline-flex items-center justify-center rounded-xl bg-[color:var(--brand-primary)] px-6 py-3 text-white font-semibold shadow-lg transition hover:bg-[color:var(--brand-secondary)]"
-              >
-                Join Us
-              </Link>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export default function AboutPage() {
             {pillars.map((pillar, index) => (
               <motion.div
                 key={pillar.title}
-                className="rounded-2xl bg-slate-50 border border-slate-100 p-6 shadow-sm"
+                className="rounded-2xl bg-slate-50 border border-green-400/60 p-6 shadow-sm"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
@@ -205,7 +205,7 @@ export default function AboutPage() {
 
       <section className="container mx-auto max-w-5xl px-6 py-16 sm:py-20 space-y-8">
         <motion.div
-          className="rounded-3xl bg-white shadow-lg border border-gray-100 p-8 sm:p-10"
+          className="rounded-3xl bg-white shadow-lg border border-green-400 p-8 sm:p-10"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
@@ -309,18 +309,18 @@ export default function AboutPage() {
           </motion.div>
 
           <div className="rounded-3xl bg-white border border-gray-100 p-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-              {partners.map((partner) => (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+              {partners.map((partner, index) => (
                 <motion.div
-                  key={partner}
-                  className="h-20 rounded-2xl bg-slate-100 flex items-center justify-center"
+                  key={partner.name}
+                  className="h-24 rounded-3xl bg-white border border-[color:var(--brand-primary)]/20 shadow flex items-center justify-center"
                   variants={fadeUp}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.2 }}
-                  custom={partner}
+                  custom={index}
                 >
-                  <span className="text-gray-400 text-sm font-semibold">Logo</span>
+                  <img src={partner.logo} alt={`${partner.name} logo`} className="max-h-20 max-w-[80%] object-contain" />
                 </motion.div>
               ))}
             </div>
@@ -328,64 +328,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container mx-auto max-w-5xl px-6 py-16 sm:py-20 text-center space-y-6">
-        <motion.div
-          className="rounded-3xl bg-gradient-to-br from-[color:var(--brand-primary)] to-[color:var(--brand-secondary)] text-white shadow-xl p-10 sm:p-14"
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <h2 className="text-3xl sm:text-4xl font-semibold">Be Part of the Next Generation of Tech Leaders</h2>
-          <p className="mt-3 text-base sm:text-lg text-white/80">
-            Join a thriving community of student builders, designers, and innovators shaping the future of technology at BOUESTI.
-          </p>
-          <div className="mt-6">
-            <Link
-              href="/register"
-              className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-[color:var(--brand-primary)] font-semibold shadow-lg transition hover:bg-slate-100"
-            >
-              Join Us
-            </Link>
-          </div>
-        </motion.div>
-      </section>
-
-      <footer className="bg-gray-900 text-gray-200">
-        <div className="container mx-auto max-w-6xl px-6 py-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div className="space-y-3">
-            <h3 className="text-lg font-semibold text-white">TechHub BOUESTI</h3>
-            <p className="text-sm text-gray-400">
-              Building a community of student innovators through mentorship, collaboration, and hands-on experience.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wide">Quick Links</h4>
-            <ul className="mt-3 space-y-2 text-sm text-gray-300">
-              <li><Link href="/" className="hover:text-white transition">Home</Link></li>
-              <li><Link href="/about" className="hover:text-white transition">About</Link></li>
-              <li><Link href="/events" className="hover:text-white transition">Events</Link></li>
-              <li><Link href="/dashboard" className="hover:text-white transition">Dashboard</Link></li>
-              <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wide">Contact</h4>
-            <p className="mt-3 text-sm text-gray-300">techhub@bouesti.edu.ng</p>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wide">Connect</h4>
-            <ul className="mt-3 space-y-2 text-sm text-gray-300">
-              <li><a href="#" className="hover:text-white transition">Twitter</a></li>
-              <li><a href="#" className="hover:text-white transition">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-white transition">Instagram</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-gray-800 py-6 text-center text-xs text-gray-500">
-          © {new Date().getFullYear()} TechHub BOUESTI. All rights reserved.
-        </div>
-      </footer>
     </main>
   );
 }
